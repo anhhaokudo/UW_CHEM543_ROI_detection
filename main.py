@@ -108,7 +108,7 @@ if __name__ == '__main__':
                 save_txt=True
             )
             #detect(opt)
-
+            '''
             if source_index == 0:
                 with st.spinner(text='Preparing Images'):
                     for img in os.listdir(get_detection_folder()):
@@ -121,3 +121,4 @@ if __name__ == '__main__':
                         st.video(str(Path(f'{get_detection_folder()}') / vid))
 
                     st.balloons()
+'''
