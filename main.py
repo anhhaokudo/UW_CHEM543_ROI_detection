@@ -2,7 +2,7 @@ from io import StringIO
 from pathlib import Path
 import streamlit as st
 import time
-#from detect import detect
+from detect import run
 import os
 import sys
 import argparse
@@ -102,6 +102,11 @@ if __name__ == '__main__':
         print('valid')
         if st.button('Start Detection'):
 
+            run(weights='weights/ROI_weights.pt',
+                source= f'data/images/{uploaded_file.name}',
+                view_img=True,
+                save_txt=True
+            )
             #detect(opt)
 
             if source_index == 0:
