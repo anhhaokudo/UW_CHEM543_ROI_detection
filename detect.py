@@ -28,6 +28,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+import matplotlib
 
 import torch
 import torch.backends.cudnn as cudnn
@@ -173,8 +174,9 @@ def run(
             # Stream results
             im0 = annotator.result()
             if view_img:
-                cv2.imshow(str(p), im0)
-                cv2.waitKey(1)  # 1 millisecond
+                matplotlib.pyplot.imshow(im0, cmap = 'gray', interpolation = 'bicubic')
+                matplotlib.pyplot.xticks([]), matplotlib.pyplot.yticks([])  # to hide tick values on X and Y axis
+                matplotlib.pyplot.show()
 
             # Save results (image with detections)
             if save_img:
