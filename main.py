@@ -2,7 +2,7 @@ from io import StringIO
 from pathlib import Path
 import streamlit as st
 import time
-from detect import detect
+#from detect import detect
 import os
 import sys
 import argparse
@@ -102,7 +102,7 @@ if __name__ == '__main__':
         print('valid')
         if st.button('Start Detection'):
 
-            detect(opt)
+            #detect(opt)
 
             if source_index == 0:
                 with st.spinner(text='Preparing Images'):
